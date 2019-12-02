@@ -1,0 +1,40 @@
+nsf:
+  application:
+    name: nsf-demo-stock-viewer-zjf
+    version: 0.0.1
+    desc: this is service description
+
+  # agent配置
+  server:
+    enable: true # 是否启用NSF Server控制中心, 默认关闭
+    skey: 123
+    address: grpc://10.0.0.2:8981
+
+  #  注册中心
+  registry:
+    enable: true # 是否启用eureka注册发现服务, 默认关闭
+    address: http://10.0.0.3:9999/eureka/,http://10.0.0.4:9999/eureka/
+
+  metrics:
+    enable: true
+
+  manager:
+    patterns:
+      - className: com.netease.cloud.nsf.demo.stock.viewer.web.service.impl.StockServiceImpl
+        methods:
+          - name: getStockList
+
+  config:
+    enable: true
+    appId: nsf-demo-stock-viewer-zjf
+    env: dev
+    server: http://nsf-config-service-inner.v181108.163skiff.com
+    namespaces:
+      - name: application
+
+  authority:
+    retry: 3
+    server: http://service-auth-inner.v181108.163skiff.com
+    accessKey: 874f3a47e81e47f7ba82120d8cf6cb0c
+    secretKey: b0a198324c704a4292f5f86c2105be3c
+

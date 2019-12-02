@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 引入配置文件 -->
+    <context:property-placeholder location="classpath:application.properties" />
+
+    <dubbo:application name="COM-NETEASE-CLOUD-NSF-DEMO-STOCK-PREDICTOR-WEB-SERVICE-IPREDICTORSERVICE"/>
+
+    <context:component-scan base-package="com.netease.cloud.nsf.demo.stock.predictor.web.service"/>
+    <!-- eureka注册中心 -->
+    <dubbo:registry protocol="eureka" address="localhost:8888"/>
+    <!-- zookeeper注册中心 -->
+    <!--<dubbo:registry address="zookeeper://localhost:2181"/>-->
+    <!-- 使用rest协议 -->
+    <dubbo:protocol name="rest" port="9003"/>
+
+    <bean id="predictorService" class="com.netease.cloud.nsf.demo.stock.predictor.web.service.impl.PredictorServiceImpl"/>
+
+    <!-- 以rest方式暴露接口 -->
+    <dubbo:service interface="com.netease.cloud.nsf.demo.stock.predictor.web.service.IPredictorService" version="0.0.1" ref="predictorService"
+                   protocol="rest"/>
+</beans>
