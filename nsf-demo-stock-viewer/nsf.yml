@@ -1,11 +1,11 @@
 nsf:
-  type: springboot2.1
+  type: http
   version: '2.0'
   nsfServer: 'http://nsf-server.v190808.163skiff.com'
   application:
     name: stock-viewer
-    version: 0.0.2
-    projectCode: 
+    version: 0.0.3
+    projectCode: zl
 
   # 方法配置
   manager:
@@ -22,8 +22,8 @@ nsf:
       - '.*'
 
   authority:
-    accessKey: 081a63b82cb84dd481e689dbecbcba35
-    secretKey: 0a2f237e2ab44c84b50435db6164bdd4
+    accessKey: 5778ed76a2bc4f6e8b9b2d9aa2eae748
+    secretKey: 1366d17e43e1403880594bc25ecf1093
   relations:
     services: []
     versions: []
