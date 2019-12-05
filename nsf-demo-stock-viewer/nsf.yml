@@ -1,1 +1,29 @@
+nsf:
+  type: springboot2.1
+  version: '2.0'
+  nsfServer: 'http://nsf-server.v190808.163skiff.com'
+  application:
+    name: stock-viewer
+    version: 0.0.2
+    projectCode: 
 
+  # 方法配置
+  manager:
+    patterns:
+    - className: com.netease.cloud.nsf.demo.stock.viewer.web.service.impl.*
+
+  # 应用监控
+  metric:
+    enable: true
+    custom:
+      enable: true
+      includes:
+      - 'jvm.*'
+      - '.*'
+
+  authority:
+    accessKey: 081a63b82cb84dd481e689dbecbcba35
+    secretKey: 0a2f237e2ab44c84b50435db6164bdd4
+  relations:
+    services: []
+    versions: []
