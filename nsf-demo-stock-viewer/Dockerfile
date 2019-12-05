@@ -9,9 +9,9 @@ RUN cd /usr/local/tomcat/webapps && \
     mv nsf*.war ROOT.war && \
     rm -rf ROOT 
     
-RUN wget "http://httpserver.v181108.163skiff.com/download/nsf-agent.jar" -O nsf-agent.jar
+RUN wget "http://console.v190808.163skiff.com/download/nsf-agent-v2.5.6-1daf42fe-20190916-162559.jar" -O nsf-agent.jar
 
-RUN wget -P /nce-dev/nce/nsf-demo-stock/apm http://httpserver.v181108.163skiff.com/download/napm-java-agent.tar.gz && \
+RUN wget -P /nce-dev/nce/nsf-demo-stock/apm http://console.v190808.163skiff.com/download/napm-java-agent-v5.3.3-190825-36860798.tar.gz && \
     tar zxvf /nce-dev/nce/nsf-demo-stock/apm/napm-java-agent.tar.gz -C /nce-dev/nce/nsf-demo-stock/apm && \
     cd /nce-dev/nce/nsf-demo-stock/apm/napm-java-agent && \
     cd conf && \
