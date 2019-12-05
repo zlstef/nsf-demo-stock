@@ -3,7 +3,7 @@ nsf:
   version: '2.0'
   nsfServer: 'http://nsf-server.v190808.163skiff.com'
   application:
-    name: stock-viewer
+    name: nsf-demo-stock-viewer
     version: 0.0.3
     projectCode: zl
 
