@@ -11,6 +11,15 @@ nsf:
   manager:
     patterns:
     - className: com.netease.cloud.nsf.demo.stock.viewer.web.service.impl.*
+    
+    
+  # 配置中心 
+  config:
+    enable: true
+    appId: nsf-demo-stock-viewer
+   #env: dev
+    namespaces:
+      - name: application  
 
   # 应用监控
   metric:
