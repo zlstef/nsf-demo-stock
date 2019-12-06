@@ -3,7 +3,7 @@ nsf:
   version: '2.0'
   nsfServer: 'http://nsf-server.v190808cluster2.163skiff.com'
   application:
-    name: stock-provider-zjf
+    name: nsf-demo-stock-provider-zjf
     version: 0.0.3
     projectCode: zl
 
@@ -16,7 +16,7 @@ nsf:
   # 配置中心 
   config:
     enable: true
-    appId: stock-provider-zjf
+    appId: nsf-demo-stock-provider-zjf
    #env: dev
     namespaces:
       - name: application  
