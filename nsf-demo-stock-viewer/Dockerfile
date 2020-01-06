@@ -19,7 +19,7 @@ RUN mkdir -p /opt/apm && cd /opt/apm && \
     tar zxvf napm-java-agent.tar.gz && \
     cd ./napm-java-agent/conf && \
     echo "endpoint=http://apm-collector.v190808.163skiff.com" >> napm-agent.properties && \
-    echo "productId=152-stock-zl" >> napm-agent.properties && \
+    echo "productId=152-stock-wasu1" >> napm-agent.properties && \
     echo "service=viewer" >> napm-agent.properties
 
 CMD ["catalina.sh", "run"]
