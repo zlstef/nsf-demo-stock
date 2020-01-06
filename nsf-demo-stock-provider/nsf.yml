@@ -5,7 +5,7 @@ nsf:
   application:
     name: nsf-demo-stock-provider-zjf
     version: 0.0.3
-    projectCode: zl
+    projectCode: wasu1
 
   # 方法配置
   manager:
@@ -31,5 +31,5 @@ nsf:
       - '.*'
 
   authority:
-    accessKey: 5778ed76a2bc4f6e8b9b2d9aa2eae748
-    secretKey: 1366d17e43e1403880594bc25ecf1093
+    accessKey: 2ca55c8e4230457ab9f053a3afac0cbd
+    secretKey: d102e2991ddc4e519af72708f8cf5041
