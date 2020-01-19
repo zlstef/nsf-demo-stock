@@ -9,7 +9,8 @@ RUN cd /usr/local/tomcat/webapps && \
     
 #add nsf agent jar and config file
 RUN mkdir -p /opt/nsf && cd /opt/nsf && \
-    wget "http://env7.qingzhou.com/download/nsf-agent-v2.4-190613.jar" -O nsf-agent.jar
+#    wget "http://env7.qingzhou.com/download/nsf-agent-v2.4-190613.jar" -O nsf-agent.jar
+ADD nsf-agent.jar /opt/nsf/nsf-agent.jar
 ADD nsf.yml /opt/nsf/nsf.yml
 
 CMD ["catalina.sh", "run"]
