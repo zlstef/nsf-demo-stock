@@ -1,7 +1,7 @@
 FROM tomcat:7.0.77-jre8
 
 #add application jar
-ADD target/nsf*.war /usr/local/tomcat/webapps/
+ADD ./*/target/nsf*.war /usr/local/tomcat/webapps/
 
 RUN cd /usr/local/tomcat/webapps && \
     mv nsf*.war ROOT.war && \
