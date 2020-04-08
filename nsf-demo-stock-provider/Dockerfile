@@ -1,4 +1,4 @@
-FROM tomcat:7.0.77-jre8
+FROM hub.c.163.com/library/tomcat:7.0.81-jre8
 
 #add application jar
 ADD target/nsf*.war /usr/local/tomcat/webapps/
