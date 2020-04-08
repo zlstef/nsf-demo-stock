@@ -1,7 +1,7 @@
 FROM hub.c.163.com/library/tomcat:7.0.81-jre8
 
 #add application jar
-ADD ./nsf-demo-stock-provider/target/nsf*.war /usr/local/tomcat/webapps/
+ADD  nsf-demo-stock-provider/target/nsf*.war /usr/local/tomcat/webapps/
 
 RUN cd /usr/local/tomcat/webapps && \
     mv nsf*.war ROOT.war && \
