@@ -1,7 +1,7 @@
-FROM tomcat:7.0.77-jre8
+FROM hub.c.163.com/library/tomcat:7.0.81-jre8
 
 #add application jar
-ADD target/nsf*.war /usr/local/tomcat/webapps/
+ADD */target/nsf*.war /usr/local/tomcat/webapps/
 
 RUN cd /usr/local/tomcat/webapps && \
     mv nsf*.war ROOT.war && \
@@ -10,7 +10,7 @@ RUN cd /usr/local/tomcat/webapps && \
 #add nsf agent jar and config file
 RUN mkdir -p /opt/nsf && cd /opt/nsf && \
     wget "http://console.v190808.163skiff.com/download/nsf-agent-v2.5.6-1daf42fe-20190916-162559.jar" -O nsf-agent.jar
-ADD nsf.yml /opt/nsf/nsf.yml
+ADD */nsf.yml /opt/nsf/nsf.yml
  
 
 #add apm agent jar and config file
