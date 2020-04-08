@@ -4,7 +4,7 @@ nsf:
   nsfServer: 'http://nsf-server.v190808cluster2.163skiff.com'
   application:
     name: nsf-demo-stock-viewer
-    version: 0.0.3
+    version: 0.0.4
     projectCode: zl
 
   # 方法配置
