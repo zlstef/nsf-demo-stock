@@ -1,0 +1,35 @@
+nsf:
+  type: http
+  version: '2.0'
+  nsfServer: 'http://nsf-server.v190808cluster2.163skiff.com'
+  application:
+    name: nsf-demo-stock-advisor-zjf
+    version: 0.0.4
+    projectCode: zl
+
+  # 方法配置
+  manager:
+    patterns:
+    - className: com.netease.cloud.nsf.demo.stock.advisor.web.service.impl.*
+    
+    
+  # 配置中心 
+  config:
+    enable: true
+    appId: nsf-demo-stock-advisor-zjf
+   #env: dev
+    namespaces:
+      - name: application  
+
+  # 应用监控
+  metric:
+    enable: true
+    custom:
+      enable: true
+      includes:
+      - 'jvm.*'
+      - '.*'
+
+  authority:
+    accessKey: 5778ed76a2bc4f6e8b9b2d9aa2eae748
+    secretKey: 1366d17e43e1403880594bc25ecf1093
