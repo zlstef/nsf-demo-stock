@@ -1,0 +1,30 @@
+nsf:
+  type: http
+  version: '2.0'
+  nsfServer: 'http://nsf-server-cust56.netease.com'
+  application:
+    name: stock-viewer-zl
+    version: 0.0.2
+    projectCode: wangbicheng
+    envCode: prod
+    zone: default
+    group: default
+    tags: []
+
+  # 方法配置
+  manager:
+    patterns:
+    - className: com.netease.cloud.nsf.demo.stock.viewer.web.service.impl.*
+
+  # 应用监控
+  metric:
+    enable: true
+    custom:
+      enable: true
+      includes:
+      - 'jvm.*'
+      - '.*'
+
+  authority:
+    accessKey: ab681795638e4bb89c61119b649bf76e
+    secretKey: 22d111c19b5d4375846e7d66778a4a84
