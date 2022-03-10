@@ -1,11 +1,15 @@
 nsf:
-  type: springboot2.1
+  type: http
   version: '2.0'
-  nsfServer: 'http://nsf-server.v190808.163skiff.com'
+  nsfServer: 'http://nsf-server.test71.geely.pro.service.163.org'
   application:
-    name: stock-viewer-configs
-    version: 0.0.2
-    projectCode: wangbicheng
+    name: stock-viewer
+    version: '0.1'
+    projectCode: project1
+    envCode: prod
+    zone: default
+    group: default
+    tags: []
 
   # 方法配置
   manager:
@@ -22,8 +26,5 @@ nsf:
       - '.*'
 
   authority:
-    accessKey: 081a63b82cb84dd481e689dbecbcba35
-    secretKey: 0a2f237e2ab44c84b50435db6164bdd4
-  relations:
-    services: []
-    versions: []
+    accessKey: 4c66b308ab594de0ad14f7611db53f14
+    secretKey: e16102a8263a48d0a24208bc7f575aeb
