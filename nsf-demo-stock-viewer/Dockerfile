@@ -10,7 +10,7 @@ RUN cd /usr/local/tomcat/webapps && \
 #add nsf agent jar and config file
 RUN mkdir -p /opt/nsf && cd /opt/nsf && \
     wget "http://console.prod.test71.geely.pro.com/download/nsf/nsf-boot.jar" -O nsf-agent.jar
-ADD nsf.yml /opt/nsf/nsf.yml
+ADD ./nsf-demo-stock-viewer/nsf.yml /opt/nsf/nsf.yml
  
 
 CMD ["catalina.sh", "run"]
