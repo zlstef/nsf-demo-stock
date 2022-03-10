@@ -13,13 +13,4 @@ RUN mkdir -p /opt/nsf && cd /opt/nsf && \
 ADD nsf.yml /opt/nsf/nsf.yml
  
 
-#add apm agent jar and config file
-RUN mkdir -p /opt/apm && cd /opt/apm && \
-    wget "http://console.v190808.163skiff.com/download/napm-java-agent-v5.3.3-190825-36860798.tar.gz" -O napm-java-agent.tar.gz && \
-    tar zxvf napm-java-agent.tar.gz && \
-    cd ./napm-java-agent/conf && \
-    echo "endpoint=http://apm-collector.v190808.163skiff.com" >> napm-agent.properties && \
-    echo "productId=152-stock-zl" >> napm-agent.properties && \
-    echo "service=viewer" >> napm-agent.properties
-
 CMD ["catalina.sh", "run"]
