@@ -1,11 +1,11 @@
 nsf:
   type: http
   version: '2.0'
-  nsfServer: 'http://nsf-server-cust56.netease.com'
+  nsfServer: 'http://nsf-server.test71.geely.pro.service.163.org'
   application:
-    name: stock-viewer-zl
-    version: 0.0.2
-    projectCode: wangbicheng
+    name: stock-viewer-configs
+    version: '0.1'
+    projectCode: project1
     envCode: prod
     zone: default
     group: default
@@ -26,5 +26,5 @@ nsf:
       - '.*'
 
   authority:
-    accessKey: ab681795638e4bb89c61119b649bf76e
-    secretKey: 22d111c19b5d4375846e7d66778a4a84
+    accessKey: 4c66b308ab594de0ad14f7611db53f14
+    secretKey: e16102a8263a48d0a24208bc7f575aeb
