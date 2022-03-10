@@ -1,25 +1,22 @@
 FROM tomcat:7.0.77-jre8
 
 #add application jar
-ADD target/nsf*.war /usr/local/tomcat/webapps/
+ADD ./nsf-demo-stock-viewer/target/*.jar /opt/nsf/
 
-RUN cd /usr/local/tomcat/webapps && \
-    mv nsf*.war ROOT.war && \
-    rm -rf ROOT 
-    
 #add nsf agent jar and config file
 RUN mkdir -p /opt/nsf && cd /opt/nsf && \
-    wget "http://console.v190808.163skiff.com/download/nsf-agent-v2.5.6-1daf42fe-20190916-162559.jar" -O nsf-agent.jar
-ADD nsf.yml /opt/nsf/nsf.yml
- 
+#    wget "http://console-cust92.netease.com/download/nsf/nsf-agent-v2.6.8-c2a5e1f9-20201203-141827.jar" -O nsf-agent.jar
+     wget "http://console.prod.test71.geely.pro.com/download/nsf/nsf-boot.jar" -O nsf-agent.jar
+ADD ./nsf-demo-stock-viewer/nsf.yml /opt/nsf/nsf.yml
 
 #add apm agent jar and config file
 RUN mkdir -p /opt/apm && cd /opt/apm && \
-    wget "http://console.v190808.163skiff.com/download/napm-java-agent-v5.3.3-190825-36860798.tar.gz" -O napm-java-agent.tar.gz && \
-    tar zxvf napm-java-agent.tar.gz && \
-    cd ./napm-java-agent/conf && \
-    echo "endpoint=http://apm-collector.v190808.163skiff.com" >> napm-agent.properties && \
-    echo "productId=152-stock-zl" >> napm-agent.properties && \
-    echo "service=viewer" >> napm-agent.properties
+    wget "http://console.prod.test71.geely.pro.com/download/napm/skywalking-napm-bin-8.5.0-latest.tar.gz" -O skywalking-napm-bin-8.5.0-latest.tar.gz && \
+   tar zxvf skywalking-napm-bin-8.5.0-latest.tar.gz
+ADD ./nsf-demo-stock-viewer/agent.config /opt/apm/skywalking-napm-bin-8.5.0-latest/agent/config/agent.config
 
-CMD ["catalina.sh", "run"]
+#add run command
+ADD ./nsf-demo-stock-viewer/run.sh  /opt/nsf/
+RUN chmod a+x /opt/nsf/run.sh
+
+CMD ["/opt/nsf/run.sh"]
