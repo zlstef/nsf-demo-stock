@@ -1,7 +1,7 @@
 FROM tomcat:7.0.77-jre8
 
 #add application jar
-ADD ./nsf-demo-stock-viewer/target/*.jar /opt/nsf/
+COPY ./nsf-demo-stock-viewer/target/*.jar /opt/nsf/
 
 #add nsf agent jar and config file
 RUN mkdir -p /opt/nsf && cd /opt/nsf && \
